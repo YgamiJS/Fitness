@@ -39,8 +39,9 @@ body {
 
 .header {
   background: $blue;
-  position: relative;
-  padding: 20px 0 40px 0;
+  position: fixed;
+  z-index: 3;
+  padding: 20px 0;
   width: 100%;
 
   &__container {
@@ -187,6 +188,7 @@ body {
 
 .showing {
   background: $blue;
+  margin-top: 70px;
 
   &__container {
     display: flex;
@@ -208,8 +210,8 @@ body {
     max-width: min(100%, 616px);
     width: 100%;
     white-space: normal;
-    font-size: 72px;
-    line-height: 80px;
+    @include adaptiv-font(72, 36);
+    @include adaptiv-font(80, 40);
     letter-spacing: 0.5%;
     font-weight: 500;
     span {
@@ -294,8 +296,8 @@ body {
 
   &__h3 {
     font-weight: 600;
-    font-size: 20px;
-    line-height: 28px;
+    @include adaptiv-font(20, 18);
+    @include adaptiv-lineHeight(28, 20);
   }
 
   &__p {
@@ -325,8 +327,8 @@ body {
   color: $white;
   &__h1 {
     font-weight: 500;
-    font-size: 40px;
-    line-height: 48px;
+    @include adaptiv-font(40, 32);
+    @include adaptiv-lineHeight(48, 32);
     letter-spacing: 0.005em;
   }
 
@@ -350,9 +352,9 @@ body {
   &__h1 {
     font-weight: 600;
     text-transform: capitalize;
-    line-height: 56px;
     letter-spacing: 0.005em;
-    font-size: 48px;
+    @include adaptiv-font(48, 24);
+    @include adaptiv-lineHeight(56, 28);
   }
 }
 
@@ -411,8 +413,8 @@ body {
 .section-h1 {
   margin: 20px 0 40px 0;
   font-weight: 600;
-  font-size: 40px;
-  line-height: 48px;
+  @include adaptiv-font(40, 20);
+  @include adaptiv-lineHeight(48, 24);
   letter-spacing: 0.005em;
 }
 
@@ -483,8 +485,8 @@ body {
 
   &__plan {
     font-weight: 600;
-    font-size: 20px;
-    line-height: 28px;
+    @include adaptiv-font(20, 18);
+    @include adaptiv-lineHeight(28, 20);
     letter-spacing: 0.005em;
     &_blue {
       color: $blue;
@@ -552,8 +554,8 @@ body {
 
   &__review-page {
     font-weight: 400;
-    font-size: 24px;
-    line-height: 32px;
+    @include adaptiv-font(24, 20);
+    @include adaptiv-lineHeight(32, 28);
     letter-spacing: 0.005em;
     color: $black;
   }
@@ -655,8 +657,6 @@ body {
   .menu {
     display: flex;
     flex-wrap: wrap;
-    &__link {
-    }
   }
 }
 
@@ -714,8 +714,6 @@ body {
 }
 .link-footer {
   color: $gray;
-  &_policy {
-  }
 
   &__content {
     display: flex;
